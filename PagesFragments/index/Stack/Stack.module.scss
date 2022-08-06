@@ -1,0 +1,75 @@
+@import '/styles/variables.scss';
+
+.content {
+  @include _flex-top-sb;
+}
+
+.card a {
+  @include _flex-col-center-sb;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.stackBlock {
+  max-width: 50%;
+}
+
+.stackTitle {
+  display: inline-block;
+}
+
+@include _netbook {
+  .card a {
+    svg {
+      width: 75px;
+      height: 75px;
+    }
+  }
+}
+@include _tablet {
+  .card a {
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+@include _phone {
+  .content {
+    @include _flex-col-top-c;
+  }
+  .cardList {
+    gap: 15px;
+    margin-top: 15px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card a {
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .stackBlock {
+    max-width: 75%;
+
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}

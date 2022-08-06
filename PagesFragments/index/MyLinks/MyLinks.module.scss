@@ -1,0 +1,36 @@
+@import '/styles/variables.scss';
+
+.main {
+  @include _flex-center-c;
+  gap: 25px;
+
+  .link {
+    width: calc(100% / 5 - 5px);
+
+    &,
+    & a {
+      @include _flex-center-c;
+    }
+
+    svg {
+      transition: $transition;
+      width: 50%;
+      fill: var(--color-two);
+
+      path {
+        fill: var(--color-two);
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.05);
+        fill: var(--color-two-hover);
+
+        path {
+          fill: var(--color-two-hover);
+        }
+      }
+    }
+  }
+}

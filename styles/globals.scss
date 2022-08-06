@@ -1,0 +1,68 @@
+@import './nullstyle';
+@import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  &[data-theme='dark'] {
+    --color-one: rgb(15, 12, 12);
+    --color-two: rgb(255, 150, 29);
+    --color-two-hover: rgb(255, 84, 31);
+    --bg: rgb(15, 14, 14);
+  }
+  &[data-theme='light'] {
+    --color-one: rgb(80, 80, 80);
+    --color-two: rgb(255, 255, 255);
+    --color-two-hover: rgb(82 180 255);
+    --bg: rgb(122, 122, 122);
+  }
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--bg);
+  font-family: 'Inconsolata', monospace;
+  button {
+    background: transparent;
+    transition: $transition;
+    padding: 3px 7px;
+    border-radius: 5px;
+    &:hover {
+      background: var(--color-two);
+      color: var(--color-one);
+      font-weight: bold;
+    }
+    &[disabled] {
+      background: $color-disable;
+      cursor: default;
+
+      &:hover {
+        color: var(--color-two);
+        font-weight: 400;
+
+        svg {
+          fill: var(--color-two);
+        }
+      }
+    }
+  }
+  &,
+  & * {
+    color: var(--color-two);
+    font-size: $text-20;
+    line-height: 150%;
+
+    @include _tablet {
+      font-size: $text-18;
+    }
+    @include _phone {
+      font-size: $text-16;
+    }
+  }
+}

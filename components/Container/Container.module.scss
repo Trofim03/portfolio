@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  @include _desktop {
+    max-width: 1170px;
+  }
+  @include _netbook {
+    max-width: 980px;
+  }
+  @include _tablet {
+    max-width: 760px;
+  }
+  @include _phone {
+    max-width: 90vw;
+  }
+}

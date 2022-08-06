@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.header {
+  background: var(--color-one);
+  padding: 15px 0;
+
+  button {
+    padding: 10px;
+  }
+}
+
+.btns {
+  max-width: 40%;
+  @include _flex-center-sb;
+  margin: 0 0 0 auto;
+  gap: 25px;
+}
+
+.nav {
+  @include _flex-center-fs;
+}
+
+.container {
+  @include _flex-center-sb;
+}
+
+.link {
+  color: var(--color-two);
+  transition: $transition;
+  margin-right: 15px;
+
+  &:hover {
+    color: var(--color-two-hover);
+  }
+}

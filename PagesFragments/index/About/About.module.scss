@@ -1,0 +1,47 @@
+@import '/styles/variables.scss';
+
+.photo {
+  border: 1px solid var(--color-two);
+  max-width: 250px;
+  margin: 0 25px 25px 0;
+}
+
+.main {
+  @include _flex-top-fs;
+  padding-top: 25px;
+}
+
+.list {
+  margin: 25px 0 25px 25px;
+  li {
+    list-style: disc;
+  }
+}
+
+@include _tablet {
+  .photo {
+    max-width: 200px;
+  }
+}
+@include _phone {
+  .photo {
+    max-width: 150px;
+    margin: 0 0 15px 0;
+  }
+  .main {
+    flex-wrap: wrap;
+    @include _flex-top-c;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin: 15px 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+}

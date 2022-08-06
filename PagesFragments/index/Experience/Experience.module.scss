@@ -1,0 +1,119 @@
+@import '/styles/variables.scss';
+
+.line {
+  position: relative;
+  width: 100%;
+  @include _flex-center-c;
+
+  &::before {
+    width: 5px;
+    height: 100%;
+    content: '';
+    display: block;
+    background: var(--color-two);
+  }
+}
+
+.point {
+  @include _flex-center-c;
+  height: 30px;
+
+  .pointLine {
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr;
+    height: 100%;
+    width: 100%;
+
+    div {
+      height: 100%;
+      width: 5px;
+      background: var(--color-two);
+    }
+
+    p:first-child {
+      justify-self: flex-end;
+      text-align: right;
+      padding: 0 25px 5px 25px;
+      width: fit-content;
+    }
+
+    p:last-child,
+    a {
+      justify-self: flex-start;
+      text-align: left;
+      padding: 0 25px 5px 25px;
+
+      svg {
+        margin-right: 25px;
+        width: 25px;
+        height: 25px;
+        flex: 0 0 auto;
+      }
+    }
+
+    p,
+    a {
+      border-bottom: 2.5px solid var(--color-two);
+      display: flex;
+      align-items: center;
+      padding-bottom: 5px;
+    }
+
+    a {
+      svg {
+        fill: var(--color-two);
+      }
+
+      &,
+      & svg {
+        transition: $transition;
+      }
+
+      &:hover {
+        &,
+        & svg {
+          fill: var(--color-two-hover);
+          color: var(--color-two-hover);
+        }
+      }
+    }
+  }
+}
+
+@include _phone {
+  .line {
+    display: grid;
+    grid-template-columns: 30% 5px calc(70% - 5px);
+
+    &::before {
+      grid-column: 2/3;
+    }
+  }
+  .point {
+    .pointLine {
+      grid-template-columns: 30% 5px calc(70% - 5px);
+
+      p:first-child {
+        justify-self: flex-end;
+        text-align: right;
+        padding: 0 15px 5px 15px;
+        width: fit-content;
+
+        font-size: $text-14;
+      }
+
+      p:last-child,
+      a {
+        justify-self: flex-start;
+        text-align: left;
+        padding: 0 15px 5px 15px;
+
+        svg {
+          margin-right: 15px;
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+}

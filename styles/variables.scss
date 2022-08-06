@@ -1,0 +1,111 @@
+$color-disable: rgb(78, 78, 78);
+
+$main-color-black: rgb(15, 12, 12);
+$main-color-gold: rgb(255, 150, 29);
+$main-color-gold-hover: rgb(255, 84, 31);
+$background: rgb(15, 14, 14);
+
+$main-color-grey: rgb(80, 80, 80);
+$main-color-white: rgb(255, 255, 255);
+$main-color-white-hover: rgb(82 180 255);
+$background-two: rgb(122, 122, 122);
+
+$color-ok: rgb(66, 146, 66);
+$color-error: rgb(194, 63, 63);
+
+$transition: all 0.3s ease;
+
+$text-14: 14px;
+$text-16: 16px;
+$text-18: 18px;
+$text-20: 20px;
+$text-24: 24px;
+
+$desktop: 1280px;
+
+$netbook-min: 1024px;
+$netbook-max: 1279px;
+
+$tablet-min: 768px;
+$tablet-max: 1023px;
+
+$phone: 767px;
+
+@mixin _desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin _netbook {
+  @media screen and (min-width: $netbook-min) and (max-width: $netbook-max) {
+    @content;
+  }
+}
+
+@mixin _tablet {
+  @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin _phone {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
+}
+
+@mixin _flex-center-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin _flex-top-sb {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@mixin _flex-top-c {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+@mixin _flex-center-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin _flex-center-fs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@mixin _flex-center-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin _flex-top-fs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin _flex-col-center-fs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+@mixin _flex-col-center-sb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin _flex-col-top-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
