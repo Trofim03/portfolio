@@ -16,9 +16,9 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "indent": ["error", "tab"],
-    "linebreak-style": ["error", "windows"],
-    "quotes": ["error", "double"],
+    "indent": ["warn", "tab"],
+    "linebreak-style": ["warn", "windows"],
+    "quotes": ["warn", "double"],
     "max-len": [
       "error",
       {
@@ -27,10 +27,10 @@
       }
     ],
     "array-bracket-newline": ["error", "always"],
-    "semi": ["error", "always"],
+    "semi": ["warn", "always"],
     "function-paren-newline": ["error", { "minItems": 3 }],
     "object-curly-newline": [
-      "error",
+      "warn",
       {
         "ObjectExpression": "always",
         "ObjectPattern": {
