@@ -1,7 +1,7 @@
 import { AnimatedText } from "./AnimatedText/AnimatedText"
 
-interface IBlockLayout {
-  children: JSX.Element | JSX.Element[] | string;
+export interface IBlockLayout {
+  children: JSX.Element | JSX.Element[];
   title: string
 }
 
