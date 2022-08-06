@@ -9,17 +9,6 @@ interface AnimatedBlockProps {
   plus?: number;
 }
 
-const variants = {
-  initial: {
-    opacity: 0,
-    y: 25
-  },
-  animate: {
-    opacity: 1,
-    y: 0
-  }
-}
-
 export function AnimatedBlock({ children, className = '', plus = 0 }: AnimatedBlockProps) {
 
   const [wasInView, setWasInView] = useState(false)
@@ -39,7 +28,7 @@ export function AnimatedBlock({ children, className = '', plus = 0 }: AnimatedBl
         setNewClassName(`${className} ${css.block} ${css.wasInView}`)
       }, plus * 1000)
     }
-  }, [wasInView])
+  }, [wasInView, className, plus])
 
   return (
     <div className={newClassName} ref={ref}>
