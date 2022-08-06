@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
-import { usePortfolioData } from '../hooks/usePortfolioData'
+// import { usePortfolioData } from '../hooks/usePortfolioData'
 
 const Portfolio: NextPage = () => {
 
-  const { currentElem } = usePortfolioData()
+  // const { currentElem } = usePortfolioData()
 
   return (
     <div>

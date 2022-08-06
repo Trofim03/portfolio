@@ -1,14 +1,14 @@
 import { Container } from '../Container/Container'
 import css from './Header.module.scss'
-import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
+// import Link from 'next/link'
+// import { useTranslation } from 'react-i18next'
 import { ChangeLanguageButton } from '../ChangeLanguageButton/ChangeLanguageButton';
-import { AnimatedBlock } from '../AnimateBlock/AnimatedBlock';
+// import { AnimatedBlock } from '../AnimateBlock/AnimatedBlock';
 import { useEffect, useRef } from 'react';
 import { ChangeThemeButton } from '../ChangeThemeButton/ChangeThemeButton';
 
 export function Header() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const ref = useRef(null)
 
@@ -17,9 +17,9 @@ export function Header() {
     if (ref.current && root) {
       root.style.paddingBottom = window.getComputedStyle(ref.current).height;
     }
-  }, [ref.current])
+  }, [ref])
 
-  const links = [{ name: t("header.main"), link: "/" }, { name: t("header.portfolio"), link: "/portfolio" }]
+  // const links = [{ name: t("header.main"), link: "/" }, { name: t("header.portfolio"), link: "/portfolio" }]
 
   return (
     <header className={css.header} ref={ref}>

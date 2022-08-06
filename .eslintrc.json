@@ -16,21 +16,22 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "indent": ["warn", "tab"],
-    "linebreak-style": ["warn", "windows"],
-    "quotes": ["warn", "double"],
+    "@typescript-eslint/no-explicit-any": "off",
+    "indent": ["off", "tab"],
+    "linebreak-style": ["off", "windows"],
+    "quotes": ["off", "double"],
     "max-len": [
-      "error",
+      "off",
       {
         "code": 150,
         "tabWidth": 8
       }
     ],
-    "array-bracket-newline": ["error", "always"],
-    "semi": ["warn", "always"],
+    "array-bracket-newline": ["off", "always"],
+    "semi": ["off", "always"],
     "function-paren-newline": ["error", { "minItems": 3 }],
     "object-curly-newline": [
-      "warn",
+      "off",
       {
         "ObjectExpression": "always",
         "ObjectPattern": {
