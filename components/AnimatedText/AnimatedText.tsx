@@ -17,7 +17,7 @@ export function AnimatedText({ text, formatted = false, loop = true, deleting = 
     loop: loop
   }
 
-  const handler = (instance) => {
+  const handler = (instance: any) => {
     const newText = formatted ? text.replaceAll('<', '&lt;').replaceAll('>', '&gt;') : text
     if (deleting) {
       instance.type(newText).pause(1000).delete(text.length).pause(500);
