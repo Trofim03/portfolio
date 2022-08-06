@@ -2,7 +2,7 @@ import { AnimatedText } from "./AnimatedText/AnimatedText"
 
 export interface IBlockLayout {
   children: JSX.Element | JSX.Element[];
-  title: string
+  title?: string
 }
 
 export const BlockLayout = ({ children, title }: IBlockLayout) => (
