@@ -32,7 +32,7 @@ export function AnimatedBlock({ children, className = '', plus = 0 }: AnimatedBl
   }, [inView])
 
   return (
-    <motion.div className={className} ref={ref} key={`${wasInView}`} variants={variants} initial='initial' animate="animate" transition={{ duration: .3, delay: .3 + plus }}>
+    <motion.div className={className} ref={ref} key={`${wasInView}`} variants={variants} initial='initial' animate="animate" transition={{ duration: .3 + plus }}>
       {children}
     </motion.div>
   )
