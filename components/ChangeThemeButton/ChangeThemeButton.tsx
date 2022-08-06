@@ -6,7 +6,7 @@ export const ChangeThemeButton = () => {
   const { t } = useTranslation()
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
-  if (document) {
+  if (typeof document !== "undefined") {
 
     const themeHandler = () => {
       theme === 'dark' ? setTheme('light') : setTheme('dark')
