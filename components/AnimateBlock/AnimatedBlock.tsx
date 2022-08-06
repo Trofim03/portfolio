@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+
+import css from './AnimatedBlock.module.scss';
 
 interface AnimatedBlockProps {
   children: JSX.Element | JSX.Element[] | string;
@@ -22,6 +23,7 @@ const variants = {
 export function AnimatedBlock({ children, className = '', plus = 0 }: AnimatedBlockProps) {
 
   const [wasInView, setWasInView] = useState(false)
+  const [newClassName, setNewClassName] = useState(`${className} ${css.block}`)
 
   const { ref, inView } = useInView();
 
@@ -31,9 +33,17 @@ export function AnimatedBlock({ children, className = '', plus = 0 }: AnimatedBl
     }
   }, [inView])
 
+  useEffect(() => {
+    if (wasInView) {
+      setTimeout(() => {
+        setNewClassName(`${className} ${css.block} ${css.wasInView}`)
+      }, plus * 1000)
+    }
+  }, [wasInView])
+
   return (
-    <motion.div className={className} ref={ref} key={`${wasInView}`} variants={variants} initial='initial' animate="animate" transition={{ duration: .3 + plus }}>
+    <div className={newClassName} ref={ref}>
       {children}
-    </motion.div>
+    </div>
   )
 }
