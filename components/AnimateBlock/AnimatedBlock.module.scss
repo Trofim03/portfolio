@@ -1,0 +1,12 @@
+@import '/styles/variables.scss';
+
+.block {
+  transition: $transition;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.wasInView {
+  opacity: 1;
+  transform: translateY(0px);
+}
