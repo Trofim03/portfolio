@@ -14,6 +14,10 @@
   @include _flex-center-sb;
   margin: 0 0 0 auto;
   gap: 25px;
+
+  button {
+    border: 1px solid;
+  }
 }
 
 .nav {
