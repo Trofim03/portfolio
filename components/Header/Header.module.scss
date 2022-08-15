@@ -10,9 +10,9 @@
 }
 
 .btns {
-  max-width: 40%;
+  max-width: 100%;
   @include _flex-center-sb;
-  margin: 0 0 0 auto;
+  margin: 0;
   gap: 25px;
 
   button {
@@ -25,7 +25,7 @@
 }
 
 .container {
-  @include _flex-center-sb;
+  // @include _flex-center-sb;
 }
 
 .link {
