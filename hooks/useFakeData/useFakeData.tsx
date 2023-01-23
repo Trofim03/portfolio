@@ -117,7 +117,7 @@ export function useExperienceData(css: cssType) {
     return (
       <div className={css.point}>
         <div className={css.pointLine}>
-          <p>{`${dateFormat(date.getDay())} ${t(`main.dates.${date.getMonth()}`)} ${date.getFullYear()}`}</p>
+          <p>{`${dateFormat(date.getDate())} ${t(`main.dates.${date.getMonth()}`)} ${date.getFullYear()}`}</p>
           <div />
           {link ?
             <a href={link} target="_blank">
@@ -220,6 +220,11 @@ export function useStackData(css: cssType) {
       name: 'Git',
       icon: <icons.GitSvg />,
       link: 'https://ru.wikipedia.org/wiki/Git'
+    },
+    {
+      name: 'Docker',
+      icon: <icons.DockerSvg />,
+      link: 'https://www.docker.com/'
     },
   ]
 

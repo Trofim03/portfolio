@@ -13,6 +13,7 @@ import WebPackSvg from '../../public/svg/stack/webpack.svg'
 import WPSvg from '../../public/svg/stack/WP.svg'
 import NodeSvg from '../../public/svg/stack/node.svg'
 import GitSvg from '../../public/svg/stack/git.svg'
+import DockerSvg from '../../public/svg/stack/docker.svg'
 
 import GitLinkSVG from '../../public/svg/links/git.svg'
 import VKLinkSVG from '../../public/svg/links/vk.svg'
@@ -38,5 +39,6 @@ export default {
   VKLinkSVG,
   WhatsAppLinkSVG,
   TGLinkSVG,
-  MailLinkSVG
+  MailLinkSVG,
+  DockerSvg
 }
