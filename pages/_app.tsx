@@ -1,48 +1,71 @@
-import '../styles/globals.scss'
-import type { AppProps } from 'next/app'
-import { MainLayout } from '../components/MainLayout'
+import "../styles/globals.scss";
+import type { AppProps } from "next/app";
+import { MainLayout } from "../components/MainLayout";
 
-import Head from 'next/head'
+import Head from "next/head";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
-import '../i18n/i18n';
-import { useTranslation } from 'react-i18next';
+import "../i18n/i18n";
+import { useTranslation } from "react-i18next";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-	const {
-		i18n: { language },
-	} = useTranslation();
+  const {
+    i18n: { language },
+  } = useTranslation();
 
-	const variants = {
-		pageInitial: {
-			opacity: 0
-		},
-		pageAnimate: {
-			opacity: 1
-		},
-	}
+  const variants = {
+    pageInitial: {
+      opacity: 0,
+    },
+    pageAnimate: {
+      opacity: 1,
+    },
+  };
 
-	return (
-		<>
-		<Head>
+  return (
+    <>
+      <Head>
         <title>TI</title>
-        
-				<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-touch-icon.png" />
-				<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png" />
-				<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png" />
-				<link rel="manifest" href="/public/favicon/site.webmanifest" />
-				<link rel="mask-icon" href="/public/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-				<meta name="msapplication-TileColor" content="#da532c" />
-				<meta name="theme-color" content="#ffffff" />
-    </Head>
-		<MainLayout>
-			<motion.div key={router.route + language} initial="pageInitial" animate="pageAnimate" variants={variants}>
-				<Component {...pageProps} />
-			</motion.div>
-		</MainLayout>
-		</>
-	)
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link
+          rel="mask-icon"
+          href="/favicon/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
+      <MainLayout>
+        <motion.div
+          key={router.route + language}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={variants}
+        >
+          <Component {...pageProps} />
+        </motion.div>
+      </MainLayout>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
