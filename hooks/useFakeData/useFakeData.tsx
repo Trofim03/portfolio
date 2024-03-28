@@ -94,7 +94,7 @@ export function useExperienceData(css: cssType) {
       title: "etalon",
       start: new Date('2021 12 28'),
       end: new Date('2022 02 22'),
-      link: 'https://etalon-idea.com/',
+      link: 'https://vk.com/etalonidea',
     },
     {
       title: "NC",
